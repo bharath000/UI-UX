@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>LLT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.flip3D{ width:300px; height:250px; margin:25px; float; }
+.flip3D > .front{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateX( 0deg );
+	transform: perspective( 600px ) rotateX( 0deg );
+	background:#FC0; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D > .back{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateX( 180deg );
+	transform: perspective( 600px ) rotateX( 180deg );
+	background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover > .front{
+	-webkit-transform: perspective( 600px ) rotateX( -180deg );
+	transform: perspective( 600px ) rotateX( -180deg );
+}
+.flip3D:hover > .back{
+	-webkit-transform: perspective( 600px ) rotateX( 0deg );
+	transform: perspective( 600px ) rotateX(0deg );
+}
+
+.flip3D0{ width:300px; height:250px; margin:25px; float; }
+.flip3D0 > .front0{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#FC0; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D0 > .back0{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 180deg );
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D0:hover > .front0{
+	-webkit-transform: perspective( 600px ) rotateY( -180deg );
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+.flip3D0:hover > .back0{
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+}
+.flip3D1{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;}
+.flip3D1 > .front1{
+  background: grey; width:300px; height:250px; border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+}
+.flip3D1 > .back1{
+  background:  black; width:300px; height:250px; border-radius: 7px;margin-left: -14px;
+  -webkit-backface-visibility: hidden;
+}
+.flip3D1 > .front4{
+  background: grey; width:300px; height:250px; border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+}
+.flip3D4{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back4{
+  background:  black; width:300px; height:250px; border-radius:;margin-left:-315px;position: relative;
+
+}
+.flip3D5{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back5{
+  background:  black; width:300px; height:250px; border-radius:;margin-left: 300px;position: relative;
+
+}
+.flip3D6{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back6{
+  background:  black; width:300px; height:250px; border-radius:;margin-top: 300px;margin-left: -14px;position: relative;
+
+}
+.flip3D7{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back7{
+  background:  black; width:300px; height:250px; border-radius:;margin-top: -315px;margin-left: -14px;position: relative;
+
+}
+.flip3D2{ width:300px; height:250px; margin:25px; overflow: hidden; }
+.flip3D2 > .front2{
+  background: grey; width:300px; height:250px; border-radius: 0px;
+  -webkit-backface-visibility: hidden;
+}
+.flip3D2 > .back2{
+  background:  black; width:300px; height:250px; border-radius: 0px; margin-top:;
+  -webkit-backface-visibility: hidden;
+}
+.flip3D8{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back8{
+  background:  black; width:300px; height:250px; border-radius:;margin-top: -315px;margin-left: -14px;position: relative;
+
+}
+.flip3D9{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back9{
+  background:  black; width:300px; height:50px; border-radius:;margin-top: 300px;margin-left: -14px;position: relative;
+
+}
+.flip3D10{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back10{
+  background:  black; width:0px; height:0px; border-radius:;position: relative;margin-left: -14px;
+
+}
+.flip3D11{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back11{
+  background:  black; width:300px; height:250px; border-radius:;position: relative;margin-left: -14px;
+
+}
+.flip3D12{ background: grey;width:300px; height:250px; margin:25px; overflow: hidden;position: relative;}
+ .back12{
+  background:  black; width:300px; height:250px; border-radius:;position: relative;margin-left: -14px;
+
+}
+
+
+.flip3D13{ width:300px; height:250px; margin:25px; float; }
+.flip3D13> .front13{
+	position:absolute;
+	-webkit-transform: perspective( 1600px ) rotateX( 0deg );
+	transform: perspective( 1600px ) rotateX( 0deg );
+	background:#FC0; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D13 > .back13{
+	position:absolute;
+	-webkit-transform: perspective( 1600px ) rotateX( 0deg );
+	transform: perspective( 1600px ) rotateX( 0deg );
+	background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D13:hover > .front13{
+	-webkit-transform: perspective( 1600px ) rotateX( 90deg );
+	transform: perspective( 1600px ) rotateX( 90deg );
+}
+.flip3D13:hover > .back13{
+	-webkit-transform: perspective( 1600px ) rotateX( 0deg );
+	transform: perspective( 1600px ) rotateX(0deg );
+}
+
+.flip3D14{ width:300px; height:250px; margin:25px; float; }
+.flip3D14> .front14{
+	position:absolute;
+	-webkit-transform: perspective( 1600px ) rotateY( 0deg );
+	transform: perspective( 1600px ) rotateY( 0deg );
+	background:#FC0; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D14 > .back14{
+	position:absolute;
+	-webkit-transform: perspective( 1600px ) rotateY( 0deg );
+	transform: perspective( 1600px ) rotateY( 0deg );
+	background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D14:hover > .front14{
+	-webkit-transform: perspective( 1600px ) rotateY( 90deg );
+	transform: perspective( 1600px ) rotateY( 90deg );
+}
+.flip3D14:hover > .back14{
+	-webkit-transform: perspective( 1600px ) rotateY( 0deg );
+	transform: perspective( 1600px ) rotateY(0deg );
+}
+
+.flip3D15{ width:300px; height:250px; margin:25px; overflow: hidden;}
+.flip3D15> .front15{background:#FC0; width:300px; height:250px; border-radius: 7px;
+	position:absolute;
+	-webkit-transform: scale( 0,0 );
+	transform:  scale( 0,0 );
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+
+}
+.flip3D15 > .back15{background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	position:absolute;
+	-webkit-transform: scale(  1,1) ;
+	transform:  scale(  1,1  );
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+
+}
+.flip3D15:hover > .front15{
+	-webkit-transform:  scale(1,1  );
+	transform:  scale( 1,1)
+}
+.flip3D15:hover > .back15{
+	-webkit-transform:  scale( 1,1 );
+
+  transform:  scale( 1,1);
+}
+
+.flip3D16{ width:300px; height:250px; margin:25px; overflow: hidden;}
+.flip3D16> .front16{background:#FC0; width:300px; height:250px; border-radius: 7px;
+	position:absolute;
+	-webkit-transform: scale( 1,1 );
+	transform:  scale( 1,1 );
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+
+}
+.flip3D16 > .back16{background: #80BFFF; width:300px; height:250px; border-radius: 7px;
+	position:absolute;
+	-webkit-transform: scale(  1,1) ;
+	transform:  scale(  1,1  );
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+
+}
+.flip3D16:hover > .front16{
+	-webkit-transform:  scale(0,0  );
+	transform:  scale( 0,0)
+}
+.flip3D16:hover > .back16{
+	-webkit-transform:  scale( 1,1 );
+
+  transform:  scale( 1,1);
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $(".flip3D").hover(function(){
+        $(".front").css({
+          -webkit-transform: perspective( "600px" ) rotateX( "-180deg" );
+          transform: perspective( "600px" ) rotateX( "-180deg" );
+        });
+        $(".back").css({
+          -webkit-transform: perspective( "600px" ) rotateX( "0deg" );
+          transform: perspective( "600px" ) rotateX( "0deg" );
+        });
+   });
+
+});
+
+
+</script>
+<script>
+
+$(document).ready(function(){
+  $(" .back1").animate({
+
+      height:'hide'
+  });
+    $(" .front1").mouseenter(function(){
+        $(" .back1").animate({
+
+            height:'show'
+        });
+        $(" .front1").animate({
+
+            height:'hide'
+        });
+
+    $(" .back1").mouseleave(function(){
+        $(".back1").animate({
+
+              height:'hide'
+        });
+        $(".front1").animate({
+
+              height:'show'
+        });
+    });
+    $(" .front1").mouseleave(function(){
+        $(".back1").animate({
+
+              height:'hide'
+        });
+
+    });
+   });
+});
+
+</script>
+<script>
+$(document).ready(function(){
+ $(" .back2").css({
+
+
+  height:'0px'
+ });
+    $(".front2").mouseenter(function(){
+        $(".back2").animate({
+            left: '0',
+            opacity: '1',
+            height: '250px'
+
+        });
+
+     });
+     $(".front2").mouseleave(function(){
+         $(".back2").animate({
+             left: '0',
+             opacity: '1',
+             height: '0px'
+
+         });
+
+      });
+
+
+
+     $(".back2").mouseleave(function(){
+        $(".back2").animate({
+            left: '0%',
+            opacity: '1',
+            height: '0px'
+        });
+    });
+});
+</script>
+<!<script>
+$(document).ready(function(){
+  $(" .back4").css({
+
+
+    width:'-300px',
+
+
+  });
+
+    $(".flip3D4").mouseenter(function(){
+        $(".back4").animate({
+            left: '-300px',
+            opacity: '1',
+          height: '250px',
+           width: '300px'
+       });
+
+     } ) ;
+     $(".back4").mouseleave(function(){
+        $(".back4").animate({
+            left: '-300px',
+            opacity: '1',
+            height: '250px',
+            width: '-300px'
+        });
+    });
+});-->
+<script>
+$(document).ready(function(){
+
+
+    $(".flip3D4").mouseenter(function(){
+
+       $(" .back4").animate({
+         left:'300px'
+       });
+
+     } ) ;
+     $(".back4").mouseleave(function(){
+        $(".back4").animate({
+            left: '-300px'
+
+        });
+    });
+    $(".flip3D4").mouseleave(function(){
+       $(".back4").animate({
+           left: '-300px'
+
+       });
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+
+
+    $(".flip3D5").mouseenter(function(){
+
+       $(" .back5").animate({
+         left:'-314px'
+       });
+
+     } ) ;
+     $(".back5").mouseleave(function(){
+        $(".back5").animate({
+            left: '300px'
+
+        });
+    });
+    $(".flip3D5").mouseleave(function(){
+       $(".back5").animate({
+           left: '300px'
+
+       });
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $(".flip3D6").mouseenter(function(){
+   $(" .back6").animate({
+         top:'-300px'
+       });
+ } ) ;
+     $(".back6").mouseleave(function(){
+        $(".back6").animate({
+            top: '300px'
+
+        });
+    });
+    $(".flip3D6").mouseleave(function(){
+       $(".back6").animate({
+           top: '300px'
+
+       });
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+
+
+    $(".flip3D7").mouseenter(function(){
+
+       $(" .back7").animate({
+         top:'314px'
+       });
+
+     } ) ;
+     $(".back7").mouseleave(function(){
+        $(".back7").animate({
+            top: '-300px'
+
+        });
+    });
+    $(".flip3D7").mouseleave(function(){
+       $(".back7").animate({
+           top: '-300px'
+
+       });
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $(".flip3D8").mouseenter(function(){
+   $(" .back8").animate({
+         top:'120px'
+       });
+ } ) ;
+     $(".back8").mouseleave(function(){
+        $(".back8").animate({
+            top: '-100px'
+
+        });
+    });
+    $(".flip3D8").mouseleave(function(){
+       $(".back8").animate({
+           top: '-100px'
+
+       });
+   });
+});
+    /* $(".front8").mouseenter(function(){
+         $(".front8").animate({
+             left: '0',
+             opacity: '1',
+             height: '50px'
+
+         });
+
+      });
+     $(".front8").mouseleave(function(){
+        $(".back8").animate({
+            left: '0%',
+            opacity: '1',
+            height: '250px'
+        });
+    });
+    $(".back8").mouseleave(function(){
+       $(".back8").animate({
+           left: '0%',
+           opacity: '1',
+           height: '250px'
+       });
+   });*/
+
+
+</script>
+<script>
+$(document).ready(function(){
+  $(".flip3D9").mouseenter(function(){
+   $(" .back9").animate({
+         top:'-100px'
+       });
+ } ) ;
+     $(".back9").mouseleave(function(){
+        $(".back9").animate({
+            top: '300px'
+
+        });
+    });
+    $(".flip3D9").mouseleave(function(){
+       $(".back9").animate({
+           top: '300px'
+
+       });
+   });
+});
+</script>
+<script>
+
+$(document).ready(function(){
+  $(".flip3D10").mouseenter(function(){
+   $(" .back10").animate({
+     height: '250px',
+        width:'300px'
+
+       });
+ } ) ;
+     $(".back10").mouseleave(function(){
+        $(".back10").animate({
+          height: '0px',
+        width:'0px'
+
+        });
+    });
+    $(".flip3D10").mouseleave(function(){
+       $(".back10").animate({
+         height: '0px',
+       width:'0px'
+
+       });
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+      $(".back11").fadeOut();
+  $(".flip3D11").mouseenter(function(){
+        $(".back11").fadeIn();
+ } ) ;
+     $(".back11").mouseleave(function(){
+          $(".back11").fadeOut();
+    });
+    $(".flip3D11").mouseleave(function(){
+        $(".back11").fadeOut();
+   });
+});
+</script>
+<script>
+$(document).ready(function(){
+      $(".back12").fadeOut();
+  $(".flip3D12").mouseenter(function(){
+        $(".back12").fadeIn("slow");
+ } ) ;
+     $(".back12").mouseleave(function(){
+          $(".back12").fadeOut("slow");
+    });
+    $(".flip3D12").mouseleave(function(){
+        $(".back12").fadeOut("slow");
+   });
+});
+</script>
+
+
+</head>
+<body>
+  <div class = "container">
+   <div class="row">
+   <div class = "col-sm-4 flip3D align-center">
+     <div class="back">Box 1 - Back</div>
+<div class="front">Box 1 - Front</div>
+   </div>
+   <div class = "col-sm-4 flip3D align-center">
+     <div class="back">Box 1 - Back</div>
+<div class="front">Box 1 - Front</div>
+   </div>
+   <div class = "col-sm-4 flip3D align-center">
+     <div class="back">Box 1 - Back</div>
+<div class="front">Box 1 - Front</div>
+   </div>
+
+   </div>
+
+
+  </div>
+  <br>
+  <div class = "container">
+   <div class="row">
+   <div class = "col-sm-4 flip3D1 align-center">
+     <div class="back1">Box 1 - Back</div>
+<div class="front1">Box 1 - Front</div>
+   </div>
+   <div class = "col-sm-4 flip3D4 align-center">
+     <div class="back4">Box 1 - Back</div>
+
+   </div>
+   <div class = "col-sm-4 flip3D5 align-center">
+     <div class="back5">Box 1 - Back
+
+   </div>
+
+   </div>
+ </div></div>
+  <div class = "container">
+     <div class="row">
+       <div class = "col-sm-4 flip3D2 align-center">
+         <div class="back2">hfg</div>
+     <div class="front2">Box 1 - Front</div>
+       </div>
+       <div class = "col-sm-4 flip3D6 align-center">
+         <div class="back6">hfgh</div>
+
+       </div>
+       <div class = "col-sm-4 flip3D7 align-center">
+         <div class="back7">hhh</div>
+     </div>
+
+  </div>
+</div>
+<div class = "container">
+ <div class="row">
+ <div class = "col-sm-4 flip3D0 align-center">
+   <div class="back0">Box 1 - Back</div>
+<div class="front0">Box 1 - Front</div>
+ </div>
+ <div class = "col-sm-4 flip3D0 align-center">
+   <div class="back0">Box 1 - Back</div>
+<div class="front0">Box 1 - Front</div>
+ </div>
+ <div class = "col-sm-4 flip3D0 align-center">
+   <div class="back0">Box 1 - Back</div>
+<div class="front0">Box 1 - Front</div>
+ </div>
+ </div>
+</div>
+<div class = "container">
+   <div class="row">
+     <div class = "col-sm-4 flip3D8 align-center">
+       <div class="back8">hfg</div>
+
+     </div>
+     <div class = "col-sm-4 flip3D9 align-center">
+       <div class="back9">hfgh</div>
+
+     </div>
+     <div class = "col-sm-4 flip3D10 align-center">
+       <div class="back10">hhh</div>
+
+   </div>
+
+</div>
+</div>
+<div class = "container">
+   <div class="row">
+     <div class = "col-sm-4 flip3D11 align-center">
+       <div class="back11">hfg</div>
+
+     </div>
+     <div class = "col-sm-4 flip3D12 align-center">
+       <div class="back12">hfgh</div>
+
+     </div>
+     <div class = "col-sm-4 flip3D13 align-center">
+       <div class="back13">hhh</div>
+   <div class="front13">hhh</div>
+   </div>
+
+</div>
+</div>
+
+<div class = "container">
+   <div class="row">
+     <div class = "col-sm-4 flip3D14 align-center">
+       <div class="back14">hfg</div>
+ <div class="front14">hfg</div>
+     </div>
+     <div class = "col-sm-4 flip3D15 align-center">
+       <div class="back15">hfgh</div>
+   <div class="front15">hfgh</div>
+     </div>
+     <div class = "col-sm-4 flip3D16 align-center">
+       <div class="back16">hhh</div>
+   <div class="front16">hhh</div>
+   </div>
+
+</div>
+</div>
+</body>
+</html>

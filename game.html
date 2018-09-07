@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>my game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.flip3D6{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back6{
+  background:  black; width:100px; height:100px; border-radius:;margin-top: 300px;margin-left: px;position: relative;
+
+}
+.flip3D4{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back4{
+  background:  black; width:100px; height:100px; border-radius:;margin-left:-300px;position: relative;
+
+}
+.flip3D5{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back5{
+  background:  black; width:100px; height:100px; border-radius:;margin-left: 315px;position: relative;
+
+}
+.flip3D7{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back7{
+  background:  black; width:100px; height:100px; border-radius:;margin-top: -315px;margin-left: px;position: relative;
+
+}
+
+.flip3D0{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back0{
+  background:  black; width:100px; height:100px; border-radius:;margin-top: 300px;margin-left: px;position: relative;
+
+}
+.flip3D1{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back1{
+  background:  black; width:100px; height:100px; border-radius:;margin-left:-300px;position: relative;
+
+}
+
+.flip3D2{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back2{
+  background:  black; width:100px; height:100px; border-radius:;margin-left:-300px;position: relative;
+
+}
+.flip3D3{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back3{
+  background:  black; width:100px; height:100px; border-radius:;margin-left: 315px;position: relative;
+
+}
+.flip3D8{ background: grey;width:100px; height:100px; margin:25px; overflow: hidden;position: relative;}
+ .back8{
+  background:  black; width:100px; height:100px; border-radius:;margin-top: -315px;margin-left: -px;position: relative;
+
+}
+#countdown{
+  color: white;
+  font-size: 30px;
+}
+#countdown1{
+  color: white;
+  font-size: 30px;
+}
+#countdown2{
+  color: white;
+  font-size: 30px;
+}
+#countdown3{
+  color: white;
+  font-size: 30px;
+}
+#countdown0{
+  color: white;
+  font-size: 30px;
+}
+#countdown6{
+  color: white;
+  font-size: 30px;
+}
+#countdown5{
+  color: white;
+  font-size: 30px;
+}
+#countdown7{
+  color: white;
+  font-size: 30px;
+}
+#countdown8{
+  color: white;
+  font-size: 30px;
+
+}
+.row{
+  margin-left: 30%;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.flex-item {
+
+    width: 100px;
+    height: 100px;
+    margin: ;
+	text-align:center;
+
+}
+</style>
+<!--
+/*$(document).ready(function(){
+       var I = setInterval(sInterval,4000);
+
+
+   function sInterval(){ $(" .back6").animate({
+         top:'-300px'
+       });
+}
+
+//  setInterval(function(){$(" .back6").animate({
+//var A = mouseEnter()
+var y = 0;
+ $(".back6").mouseenter(function mouseEnter(){
+
+
+
+$(" .back6").animate({
+        top:'300px'
+      });
+
+      y++;
+
+$("span").html("fuck the game bro"+ y +"jhjh");
+    });
+
+
+
+ //$("span").html("fuck the game bro"+x+"jhjh");
+
+
+ /* $(".back6").mouseleave(function(){
+        $(".back6").animate({
+            top: '300px'
+
+        });
+    });
+    $(".flip3D6").mouseleave(function(){
+       $(".back6").animate({
+           top: '300px'
+
+       });
+   });*/
+//});
+-->
+
+</head>
+<body>
+
+<div class = " flex-container">
+
+      <div class = "flip3D6 flex-item">
+       <div class="back6 text-center flex-item" id = "countdown"></div>
+</div>
+
+<div class = "flip3D4 flex-item">
+<div class="back4 text-center flex-item" id = "countdown1"></div>
+</div>
+<div class = "flip3D0 flex-item">
+<div class="back0 text-center flex-item" id = "countdown0"></div>
+</div>
+</div>
+<div class = "flex-container">
+
+    <div class = "flex-item flip3D5 align-center">
+    <div class="back5 text-center flex-item" id = "countdown2" >Box 1 - Back  </div>
+</div>
+<div class = "flex-item flip3D7 align-center">
+
+         <div class="back7 text-center flex-item" id ="countdown3"></div>
+     </div>
+     <div class = "flip3D1 flex-item">
+     <div class="back1 text-center flex-item" id = "countdown5"></div>
+     </div>
+  </div>
+
+
+<div class = " flex-container">
+
+    <div class = "flex-item flip3D2 align-center">
+    <div class="back2 text-center flex-item" id = "countdown6">Box 1 - Back  </div>
+</div>
+<div class = "flex-item flip3D3 align-center">
+         <div class="back3 text-center flex-item" id ="countdown7"></div>
+     </div>
+     <div class = "flip3D8 flex-item">
+     <div class="back8 text-center flex-item" id = "countdown8"></div>
+     </div>
+  </div>
+
+<span style="color:black;"> </span>
+<div id="notifier"></div>
+
+
+
+
+<script>
+// array declerations
+var functions = [];
+var a = 2;
+  //var ri = Math.floor(Math.random() * functions.length);
+// left or second function
+ functions[0] = function secondInterval() {
+
+
+  $(" .back4").animate({
+          left:'300px'
+ });
+ //$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+  display("countdown1", toMinuteAndSecond(remain));
+//  $(".back6").click(function mouseEnter(){ remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back4").animate({
+           left:'-300px'
+         });
+
+
+    //  exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+ }
+ functions[5] = function secondInterval() {
+
+
+  $(" .back1").animate({
+          left:'300px'
+ });
+ //$("span").html("fuck the game bro"+ y +"jhjh");
+
+ (function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+ function toMinuteAndSecond( x ) {
+ return Math.floor(x/60) + ":" + (x=x%60 );
+ }
+
+ function setTimer( remain, actions ) {
+ var action ;
+ (function countdown() {
+  display("countdown5", toMinuteAndSecond(remain));
+ //  $(".back6").click(function mouseEnter(){ remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back1").animate({
+           left:'-300px'
+         });
+
+
+    //  exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+ })(); // End countdown
+ }
+ setTimer(a,{
+ // 10: function () { display("notifier", "Just 10 seconds to go"); },
+ //  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+ });
+ })();
+
+ }
+// third function with back5
+functions[1] = function thirdInterval() {
+
+
+  $(" .back5").animate({
+          left:'-314px'
+ });
+ //$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+  display("countdown2", toMinuteAndSecond(remain));
+//  $(".back6").click(function mouseEnter(){remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back5").animate({
+           left:'300px'
+         });
+
+
+    //  exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+
+// fourth function with back7
+functions[2] = function fourthInterval() {
+
+
+  $(" .back7").animate({
+          top:'314px'
+ });
+ //$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+  display("countdown3", toMinuteAndSecond(remain));
+//  $(".back7").click(function mouseEnter(){remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back7").animate({
+           top:'-315px'
+         });
+
+
+    //  exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+
+functions[6] = function secondInterval() {
+
+
+ $(" .back2").animate({
+         left:'300px'
+});
+//$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+ function display( notifier, str ) {
+   document.getElementById(notifier).innerHTML = str;
+ }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+ display("countdown6", toMinuteAndSecond(remain));
+//  $(".back6").click(function mouseEnter(){ remain = 0;});
+ if (action = actions[remain]) {
+
+$(" .back2").animate({
+          left:'-300px'
+        });
+
+
+   //  exit();
+
+
+ }
+ if (remain > 0) {
+   remain -= 1;
+   setTimeout(arguments.callee, 1000);
+ }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+// third function with back5
+functions[7] = function thirdInterval() {
+
+
+ $(" .back3").animate({
+         left:'-314px'
+});
+//$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+ function display( notifier, str ) {
+   document.getElementById(notifier).innerHTML = str;
+ }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+ display("countdown7", toMinuteAndSecond(remain));
+//  $(".back6").click(function mouseEnter(){remain = 0;});
+ if (action = actions[remain]) {
+
+$(" .back3").animate({
+          left:'300px'
+        });
+
+
+   //  exit();
+
+
+ }
+ if (remain > 0) {
+   remain -= 1;
+   setTimeout(arguments.callee, 1000);
+ }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+
+// fourth function with back7
+functions[8] = function fourthInterval() {
+
+
+ $(" .back8").animate({
+         top:'314px'
+});
+//$("span").html("fuck the game bro"+ y +"jhjh");
+
+(function () {
+
+ function display( notifier, str ) {
+   document.getElementById(notifier).innerHTML = str;
+ }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+ display("countdown8", toMinuteAndSecond(remain));
+//  $(".back7").click(function mouseEnter(){remain = 0;});
+ if (action = actions[remain]) {
+
+$(" .back8").animate({
+          top:'-315px'
+        });
+
+
+   //  exit();
+
+
+ }
+ if (remain > 0) {
+   remain -= 1;
+   setTimeout(arguments.callee, 1000);
+ }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+//s interval
+functions[3] = function sInterval() {
+
+
+  $(" .back6").animate({
+          top:'-300px'
+ });
+
+
+(function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+  display("countdown", toMinuteAndSecond(remain));
+  //$(".back6").click(function mouseEnter(){ remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back6").animate({
+           top:'300px'
+         });
+
+      //exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+
+//ssdsd
+functions[4] = function sInterval() {
+
+
+  $(" .back0").animate({
+          top:'-300px'
+ });
+
+
+(function () {
+
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+function toMinuteAndSecond( x ) {
+return Math.floor(x/60) + ":" + (x=x%60 );
+}
+
+function setTimer( remain, actions ) {
+var action ;
+(function countdown() {
+  display("countdown0", toMinuteAndSecond(remain));
+  //$(".back6").click(function mouseEnter(){ remain = 0;});
+  if (action = actions[remain]) {
+
+ $(" .back0").animate({
+           top:'300px'
+         });
+
+      //exit();
+
+
+  }
+  if (remain > 0) {
+    remain -= 1;
+    setTimeout(arguments.callee, 1000);
+  }
+
+
+})(); // End countdown
+}
+setTimer(a,{
+// 10: function () { display("notifier", "Just 10 seconds to go"); },
+//  5: function () { display("notifier", "5 seconds left");        },
+ 0: function () { display("notifier", "Time is up baby");       }
+});
+})();
+
+}
+$(document).ready(function(){
+  var ri = Math.floor(Math.random() * functions.length);
+       var I = setTimeout(functions[ri],1000);
+
+      //var functions = ["secondInterval()","thirdInterval()";"fourthInterval()"];
+  var y = 0;
+  //var a = 3;
+
+$("span").html("fuck the game bro"+ y +"jhjh");
+function link(){
+if(y>'15'){
+  //location.href = "file:///C:/Users/Student/Desktop/new%201.html";
+  a = 1;
+}
+}
+
+//  second function for left effect
+
+
+//  setInterval(function(){$(" .back6").animate({
+//var A = mouseEnter()
+//var functions = ["secondInterval()","thirdInterval()";"fourthInterval()"];
+ $(".back6").click(function mouseEnter(){
+  //var myFunctions = ["secondInterval()","thirdInterval()";"fourthInterval()"];
+var ri = Math.floor(Math.random() * functions.length);
+//var rs = functions.splice(ri,1);
+//if(ri == ri){
+//  ri = 0;
+//}
+$(" .back6").animate({
+        top:'300px'
+      });
+    y++;
+    link();
+    $("span").html("fuck the game bro"+ y +"jhjh");
+    remain = 0;
+    setTimeout(functions[ri],1000);
+   //remain = 0;
+//setTimeout(sInterval,4000);
+  //setTimeout(sInterval,4000);
+});
+
+
+$(".back4").click(function mouseEnter(){
+ var ri = Math.floor(Math.random() * functions.length);
+//  var rs = functions.splice(ri,1);
+//if(ri == ri){
+  //ri = 0;
+//}
+$(" .back4").animate({
+       left:'-300px'
+     });
+
+     y++;
+     link();
+     $("span").html("fuck the game bro"+ y +"jhjh");
+       remain = 0;
+    setTimeout( functions[ri],1000);
+   //remain = 0;
+//setTimeout(secondInterval,6000);
+});
+//0 and 1
+$(".back0").click(function mouseEnter(){
+ //var myFunctions = ["secondInterval()","thirdInterval()";"fourthInterval()"];
+var ri = Math.floor(Math.random() * functions.length);
+//var rs = functions.splice(ri,1);
+//if(ri == ri){
+//  ri = 0;
+//}
+$(" .back0").animate({
+       top:'300px'
+     });
+   y++;
+   link();
+   $("span").html("fuck the game bro"+ y +"jhjh");
+   remain = 0;
+   setTimeout(functions[ri],1000);
+  //remain = 0;
+//setTimeout(sInterval,4000);
+ //setTimeout(sInterval,4000);
+});
+
+
+$(".back1").click(function mouseEnter(){
+var ri = Math.floor(Math.random() * functions.length);
+//  var rs = functions.splice(ri,1);
+//if(ri == ri){
+ //ri = 0;
+//}
+$(" .back1").animate({
+      left:'-300px'
+    });
+
+    y++;
+    link();
+    $("span").html("fuck the game bro"+ y +"jhjh");
+      remain = 0;
+   setTimeout( functions[ri],1000);
+  //remain = 0;
+//setTimeout(secondInterval,6000);
+});
+$(".back5").click(function mouseEnter(){
+  var ri = Math.floor(Math.random() * functions.length);
+  //var rs = functions.splice(ri,1);
+  //if(ri == ri){
+  //  ri = 0;
+  //}
+$(" .back5").animate({
+       left:'300px'
+     });
+
+     y++;
+     link();
+     $("span").html("fuck the game bro"+ y +"jhjh");
+       remain = 0;
+     setTimeout(functions[ri],1000);
+   //remain = 0;
+//setTimeout(secondInterval,6000);
+});
+
+$(".back7").click(function mouseEnter(){
+ var ri = Math.floor(Math.random() * functions.length);
+  //var rs = functions.splice(ri,1);
+  //if(ri == ri){
+    //ri = 0;
+  //}
+$(" .back7").animate({
+       top:'-315px'
+     });
+
+     y++;
+     link();
+     $("span").html("fuck the game bro"+ y +"jhjh");
+       remain = 0;
+     setTimeout(functions[ri],1000);
+   //remain = 0;
+//setTimeout(secondInterval,6000);
+});
+    //  if(y = '5'){location.href = "www.google.com";}
+    $(".back2").click(function mouseEnter(){
+     var ri = Math.floor(Math.random() * functions.length);
+    //  var rs = functions.splice(ri,1);
+    //if(ri == ri){
+      //ri = 0;
+    //}
+    $(" .back2").animate({
+           left:'-300px'
+         });
+
+         y++;
+         link();
+         $("span").html("fuck the game bro"+ y +"jhjh");
+           remain = 0;
+        setTimeout( functions[ri],1000);
+       //remain = 0;
+    //setTimeout(secondInterval,6000);
+    });
+
+    $(".back3").click(function mouseEnter(){
+      var ri = Math.floor(Math.random() * functions.length);
+      //var rs = functions.splice(ri,1);
+      //if(ri == ri){
+      //  ri = 0;
+      //}
+    $(" .back3").animate({
+           left:'300px'
+         });
+
+         y++;
+         link();
+         $("span").html("fuck the game bro"+ y +"jhjh");
+           remain = 0;
+         setTimeout(functions[ri],1000);
+       //remain = 0;
+    //setTimeout(secondInterval,6000);
+    });
+
+    $(".back8").click(function mouseEnter(){
+     var ri = Math.floor(Math.random() * functions.length);
+      //var rs = functions.splice(ri,1);
+      //if(ri == ri){
+        //ri = 0;
+      //}
+    $(" .back8").animate({
+           top:'-315px'
+         });
+
+         y++;
+         link();
+         $("span").html("fuck the game bro"+ y +"jhjh");
+           remain = 0;
+         setTimeout(functions[ri],1000);
+       //remain = 0;
+    //setTimeout(secondInterval,6000);
+    });
+});
+</script>
+</body>
+
+</html>

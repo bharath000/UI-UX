@@ -1,0 +1,188 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v3.json",
+  "width": 1000,
+  "height": 800,
+  "autosize": "none",
+  "padding": 5,
+  "signals": [
+    {
+      "name": "startAngle",
+      "value": 4.69,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "endAngle",
+      "value": 7.85,
+      "bind": {"input": "range", "min": 4.75, "max": 7.81, "step": 0.01}
+    },
+    {
+      "name": "padAngle",
+      "value": 0.02,
+      "bind": {"input": "range", "min": 0.02, "max": 0.1}
+    },
+    {
+      "name": "innerRadius",
+      "value": 170,
+      "bind": {"input": "range", "min": 0, "max": 90, "step": 1}
+    },
+    {
+      "name": "cornerRadius",
+      "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+    },
+    {"name": "sort", "value": false, "bind": {"input": "checkbox"}}
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"id": 1, "field": 50,"percent": 50,"name":"TRADITIONAL"},
+        {"id": 2, "field": 13,"percent": 13,"name":"GLOBAL DEST"},
+        {"id": 3, "field": 9,"percent": 9,"name":"DELEVERY SERVICE"},
+        {"id": 4, "field": 9,"percent": 9,"name":"CONTIDENT"},
+        {"id": 5, "field": 19,"percent": 19,"name":"DIGITAL"}
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          "sort": {"signal": "sort"}
+        }
+      ]
+      
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "id"},
+      "range": {"scheme": "category20"}
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "id"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height /2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": {"signal": "innerRadius"},
+          "outerRadius": {"signal": "width / 5"},
+          "cornerRadius": {"signal": "cornerRadius"}
+        },
+         "color":  {
+        
+        "legend": {"direction": "horizontal"}}
+    
+      },
+       "marks": [
+        {
+          "type": "rect",
+          "from": {"data": "table"},
+          "interactive": false,
+          "encode": {
+            "enter": {
+              "x": {"field": "field"},
+              "y": {"field": "field"},
+              "width": {"field": "id"},
+              "height": {"field": 100},
+              "fill": {"value": "aliceblue"},
+              "stroke": {"value": "firebrick"}
+            }
+          }
+        }
+      ]
+    },
+    
+    {
+   "type": "text",
+			"from": {"data": "table"},
+      
+			"encode": {
+				"enter": {
+
+					"text": {"signal": "datum['percent'] + '%'"},
+				
+					"x": {"signal": "width/2 "},
+					"y": {"signal": "height/2"},
+	
+					"radius": {"value": 220},
+					"theta": {"signal": "(datum['startAngle'] + datum['endAngle'])/2"},
+					"angle": {"value": 0},
+          "fillColor":{"value":"red"},
+          "symbols": {"update": {"stroke": {"value": "rectangle"}}},
+					"fill": {"scale": "color", "field": "id"},
+          "fillOpacity":{"value":1},
+          "stroke": {"scale": "color", "field": "id"},
+          "strokeWidth":{"value":0},
+					"font": {"value": "Helvetica"},
+           "color": {"field": "id"},
+					"fontSize": {"value": 10},
+					"dx": {"value": 1},
+					"align": {"value": "center"},
+					"baseline": {"value": "middle"}
+				}
+      }
+
+
+
+    },
+    {
+    "type": "rect",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          
+          "fill": {"scale": "color","field":"id"},
+          "x": {"field":  "id"},
+          "y": {"signal": "startAngle"},
+          "radius": {"value": 1000}
+          
+        }
+      }
+    },
+     {
+   "type": "text",
+			"from": {"data": "table"},
+			"encode": {
+				"enter": {
+
+					"text": {"signal": "datum['name'] "},
+				
+					"x": {"signal": "width/2 "},
+					"y": {"signal": "height/2"},
+	
+					"radius": {"value": 250},
+					"theta": {"signal": "(datum['startAngle'] + datum['endAngle'])/2"},
+          "width":{"value":100},
+					"angle": {"value": 0},
+					"fill": {"scale": "color", "field": "id"},
+					"font": {"value": "Helvetica"},
+          "stroke": {"value": ""},
+          
+					"fontSize": {"value": 14},
+					"dx": {"value": 1},
+					"align": {"value": "center"},
+					"baseline": {"value": "middle"}
+				}
+			  }
+
+
+
+    }
+  ]
+  
+   
+ 
+
+}
